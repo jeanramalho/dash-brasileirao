@@ -1,13 +1,15 @@
 $(document).ready(() => {
     $('#btn-search').on('click', (e) => {
-       getRod();
-        
+      let anoSelected = $('#ano').val()
+       getReq(anoSelected);        
     });
   });
   
-  function getRod() {
-    let url = `https://api.databinteligencia.com.br/Brasileirao/jogos/2022`
-    let url2 = `https://api.databinteligencia.com.br/Brasileirao/equipes/2022`
+  function getReq(ano) {
+    let url = `https://api.databinteligencia.com.br/Brasileirao/jogos/${ano}`
+    let url2 = `https://api.databinteligencia.com.br/Brasileirao/equipes/${ano}`
+
+
     $.ajax({
         headers: { "Accept": "application/json"},
         type: 'GET',
@@ -17,9 +19,7 @@ $(document).ready(() => {
             xhr.withCredentials = true;
       },
         
-        beforeSend: function(xhr){
-            xhr.withCredentials = true;
-      },
+       
         success: function(data, textStatus, request){
             console.log(data)
             let jogos = data[1].estadio
@@ -36,10 +36,7 @@ $(document).ready(() => {
             xhr.withCredentials = true;
       },
         
-        beforeSend: function(xhr){
-            xhr.withCredentials = true;
-      },
-        success: function(data, textStatus, request){
+      success: function(data, textStatus, request){
             console.log(data)
             let time = data.ACG.equipe
             $('#info2').html(`<h1>${time}</h1>`);
