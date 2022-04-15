@@ -23,15 +23,14 @@ $(document).ready(() => {
       },           
        
         success: function(data, textStatus, request){
-          console.log(data)
-          let i = 1
-          while(i <= data.length){
-            i++
-
-            if(parseInt(data[i].rodada) == rod){
-              console.log(data[i])
+          
+          console.log(data.map())
+          
+          for(let i = 1 ;i <= data.length; i++){
+            console.log(data[i].rodada)
+            
             }
-          }
+          
           
 
 
