@@ -1,13 +1,16 @@
 $(document).ready(() => {
     $('#btn-search').on('click', (e) => {
       let anoSelected = $('#ano').val()
-       getReq(anoSelected);        
+      let pegaRodada = $('#rodada').val()  
+      getReq(anoSelected, pegaRodada);     
+      
     });
   });
   
-  function getReq(ano) {
+  function getReq(ano, rodada) {
     let url = `https://api.databinteligencia.com.br/Brasileirao/jogos/${ano}`
     let url2 = `https://api.databinteligencia.com.br/Brasileirao/equipes/${ano}`
+    let rod = rodada
 
 
     $.ajax({
@@ -17,29 +20,39 @@ $(document).ready(() => {
         crossDomain: true,
         beforeSend: function(xhr){
             xhr.withCredentials = true;
-      },
-        
+      },           
        
         success: function(data, textStatus, request){
-            console.log(data)
-            let jogos = data[1].estadio
-            $('#info').html(`<h1>${jogos}</h1>`);
-        }
-    })
+          console.log(data)
+          let i = 1 
+          console.log(data[i])
+          // if(data[i].rodada == rod){
+          // } else {
+          //   console.log("deu ruim")
+          // };
 
-    $.ajax({
-        headers: { "Accept": "application/json"},
-        type: 'GET',
-        url: url2,
-        crossDomain: true,
-        beforeSend: function(xhr){
-            xhr.withCredentials = true;
-      },
-        
-      success: function(data, textStatus, request){
-            console.log(data)
-            let time = data.ACG.equipe
-            $('#info2').html(`<h1>${time}</h1>`);
+
+
+            $.ajax({
+              headers: { "Accept": "application/json"},
+              type: 'GET',
+              url: url2,
+              crossDomain: true,
+              beforeSend: function(xhr){
+                  xhr.withCredentials = true;
+            },
+              
+            success: function(data, textStatus, request){
+                  console.log(data)
+                  let time = data.AMG.equipe
+                  $('#info2').html(`<h1>${time}</h1>`);
+              }
+          })
+
         }
+
+        
     })
+    
+
   }
