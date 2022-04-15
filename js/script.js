@@ -24,12 +24,15 @@ $(document).ready(() => {
        
         success: function(data, textStatus, request){
           console.log(data)
-          let i = 1 
-          console.log(data[i])
-          // if(data[i].rodada == rod){
-          // } else {
-          //   console.log("deu ruim")
-          // };
+          let i = 1
+          while(i <= data.length){
+            i++
+
+            if(parseInt(data[i].rodada) == rod){
+              console.log(data[i])
+            }
+          }
+          
 
 
 
