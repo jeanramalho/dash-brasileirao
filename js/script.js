@@ -33,8 +33,23 @@ function getReq(ano, rodada) {
            $.each(rodadaAtual, (index, ) => {
              let home = rodadaAtual[index].equipe1
              let visitante = rodadaAtual[index].equipe2
-             let placarHome = rodadaAtual[index].placar1
-             let placarVis = rodadaAtual[index].placar2
+
+             function placarHome () {
+               if(rodadaAtual[index].placar1 == null){
+                 return " "
+               } else {
+                 return rodadaAtual[index].placar1
+               }
+              }
+
+            function placarVis () {
+              if(rodadaAtual[index].placar2 == null) {
+                return " "
+              } else {
+                return rodadaAtual[index].placar2
+              }
+            } 
+
             if(rodadaAtual[index].rodada == rodada){
 
               let url2 = `https://api.databinteligencia.com.br/Brasileirao/equipes/${ano}`
@@ -56,13 +71,13 @@ function getReq(ano, rodada) {
                   <div class="casa">
                   <img src="${data[home].escudo}">
                   <h3>${data[home].equipe}</h3>
-                  <h2>${placarHome}</h2>
+                  <h2>${placarHome()}</h2>
                   </div>
 
                   <h1>X</h1> 
 
                   <div class="visi">
-                  <h2>${placarVis}</h2>
+                  <h2>${placarVis()}</h2>
                   <img src="${data[visitante].escudo}">
                   <h3>${data[visitante].equipe}</h3>                  
                   </div>
