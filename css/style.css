@@ -1,0 +1,9 @@
+.card {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.escudo {
+    width: 45px;
+}
