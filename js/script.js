@@ -75,7 +75,7 @@ function getReq(ano, rodada) {
                         <h5 class="card-title"> ${data[home].equipe} </h5>
                       </div>
                 
-                        <h1>${placarHome()} X ${placarVis()}</h1>
+                        <h1 class="placar">${placarHome()} </h1>  <h2 class="versus">X</h2> <h1 class="placar">${placarVis()}</h1>
 
                       <div class="time-vis">
                         <img src=" ${data[visitante].escudo}" class="escudo" alt="..."> 
