@@ -1,7 +1,15 @@
+.all {
+    width: 100vw;
+    height: 100vh;
+    background: url("../assets/wallpaper.jpg");
+    background-size: cover;
+}
+
 .cont {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     width: 100vw;
     height: 100vh;
     padding: 15px;
