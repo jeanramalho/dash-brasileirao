@@ -73,14 +73,13 @@ function getReq(ano, rodada) {
                             output += `
                   
                   <div class="card">
-                    <div>
-                    <h6 class="estadio">${estadio}</h6>
-                    <h7 class="horario">${horario}</h7>
-                    <h8 class="data">${dia.split('-').reverse().join('/')}</h8>
-                            
-                    </div>
+                    
+                  <div  class="cardInfo">
+                        <h6 class="estadio infos">${estadio}</h6>
+                        <h7 class="dataJogo infos">${dia.split('-').reverse().join('/')}  |  ${horario}</h7>
+                      </div>
                       
-
+                    <div class="cardCont">
                       <div class="time-home">
                         <img src=" ${data[home].escudo}" class="escudo" alt="...">
                         <h5 class="card-title"> ${data[home].equipe} </h5>
@@ -92,8 +91,10 @@ function getReq(ano, rodada) {
                         <img src=" ${data[visitante].escudo}" class="escudo" alt="..."> 
                         <h5 class="card-title"> ${data[visitante].equipe} </h5> 
                       </div>
+                    </div>
+
+                      
                                               
-    
         
                   </div>
                   

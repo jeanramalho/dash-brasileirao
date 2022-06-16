@@ -29,12 +29,28 @@
     -webkit-backdrop-filter: blur(20px);
     padding: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 30vw;
     border: 0.5px #fff solid;
     border-radius: 8px;
     margin: 10px;
     box-shadow: 2px #111;
+}
+
+.cardCont {
+    display: flex;
+    flex-direction: row;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.infos {
+    margin: 0%;
 }
 
 .card-title {
