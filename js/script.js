@@ -33,6 +33,9 @@ function getReq(ano, rodada) {
             $.each(rodadaAtual, (index, ) => {
                 let home = rodadaAtual[index].equipe1
                 let visitante = rodadaAtual[index].equipe2
+                let estadio = rodadaAtual[index].estadio
+                let horario = rodadaAtual[index].horario
+                let data = rodadaAtual[index].data
 
                 function placarHome() {
                     if (rodadaAtual[index].placar1 == null) {
@@ -69,6 +72,10 @@ function getReq(ano, rodada) {
                             output += `
                   
                   <div class="card">
+                            
+                      <h6 class="estadio">${estadio}</h6>
+                      <h7 class="horario">${horario}</h7>
+                      <h8 class="data">${data}</h8>
 
                       <div class="time-home">
                         <img src=" ${data[home].escudo}" class="escudo" alt="...">
