@@ -35,7 +35,8 @@ function getReq(ano, rodada) {
                 let visitante = rodadaAtual[index].equipe2
                 let estadio = rodadaAtual[index].estadio
                 let horario = rodadaAtual[index].horario
-                let data = rodadaAtual[index].data
+                let dia = rodadaAtual[index].data
+                    // let data_brasileira = dataEr.split('-').reverse().join('/')
 
                 function placarHome() {
                     if (rodadaAtual[index].placar1 == null) {
@@ -72,10 +73,13 @@ function getReq(ano, rodada) {
                             output += `
                   
                   <div class="card">
+                    <div>
+                    <h6 class="estadio">${estadio}</h6>
+                    <h7 class="horario">${horario}</h7>
+                    <h8 class="data">${dia.split('-').reverse().join('/')}</h8>
                             
-                      <h6 class="estadio">${estadio}</h6>
-                      <h7 class="horario">${horario}</h7>
-                      <h8 class="data">${data}</h8>
+                    </div>
+                      
 
                       <div class="time-home">
                         <img src=" ${data[home].escudo}" class="escudo" alt="...">
