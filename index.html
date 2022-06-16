@@ -31,12 +31,17 @@
 <body>
     <div class="all">
 
-        <h1 class="titulo">Brasileirão</h1>
-        <h4 class="ano inicial">Todos os campeonatos a partir de 2009</h4>
+        <div class="cabecalho">
+            <h1 class="titulo">Brasileirão</h1>
+            <h2 class="anoInicial">Consulte todas as rodadas dos campeoanatos a partir de 2009</h2>
+        </div>
 
-        <input id="ano" type="number" min="2009" max="2099" step="1" value="" placeholder="Escolha o Ano" />
-        <input type="text" id="rodada" placeholder="Digite a rodada">
-        <button id="btn-search">Clique</button>
+        <div class="formulario">
+            <input class="ano" id="ano" type="number" min="2009" max="2099" step="1" value="" placeholder="Escolha o Ano" />
+            <input class="rodada" type="text" id="rodada" placeholder="Digite a Rodada">
+            <button class="btn-consulta" id="btn-search">Consultar</button>
+        </div>
+
 
         <div id="info" class="cont">
 
